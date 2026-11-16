@@ -935,58 +935,222 @@
 // }
 // console.log(obj); //{ name: 'JS', age: 10 }
 
-type user={
-    name:string
-}
-type person={
-    age:number
-}
-type emp=user& person
+//animal example:it is being extended to cat and dog
+// interface animal{
+//     name:string
+//     age:number
+// }
+//interface dog
+// interface dog extends animal{
+//     breed:string
+// }
 
-interface animal{
-    name:string
-    age:number
-}
-interface dog extends animal{
-    breed:string
+// let myDog:dog={
+//     name:"simba",
+//     age:4,
+//     breed:"Golden retriver"
+// }
+// console.log("Dog:",myDog);
+// interface cat
+// interface cat extends animal{
+//     breed:string
+// }
+// let myCat:cat={
+//     name:"chintu",
+//     age:1,
+//     breed:"persian"
+// }
+// console.log("Cat:",myCat);
+
+//car example
+// interface hasEngine {
+//     engine: string;
+// }
+
+// interface hasWheels {
+//     wheels: string;
+// }
+
+// interface Car extends hasEngine, hasWheels {
+//     brand: string;
+//     model: string;
+// }
+// let mycar: Car = {
+//     engine: "YES",
+//     wheels: "4",
+//     brand: "BMW",
+//     model: "X5"
+// };
+
+// console.log("Car:",mycar);
+
+//OOPS:
+// class person{
+
+// }
+// console.log(person);
+// console.log(typeof person);
+
+//car example
+// class Car {
+//     model: string;
+//     year: string;
+//     price: number;
+
+//     constructor(model: string, year: string, price: number) {
+//         this.model = model;
+//         this.year = year;
+//         this.price = price;
+//     }
+//     drive() {
+//         console.log("Car has started");
+//     }
+//     stop(){
+//         console.log("car has stopped");
+        
+//     }
+// }
+// let car1 = new Car("BMW", "2025", 100000);
+
+// console.log(car1);
+// car1.drive()
+// car1.stop()
+
+//constructor():
+// class person{
+//     name:string;
+//     age:number;
+//     gender:string;
+
+//     constructor(name:string, age:number,gender:string){
+//         this.name=name
+//         this.age=age
+//         this.gender=gender
+//     }
+// }
+// let person1=new person("Bhavana",22,"Female")
+// let person2=new person("anjali",20,"Female")
+// let person3=new person("Abhi",20,"Male")
+// console.log(person1);
+// console.log(person2);
+// console.log(person3);
+
+//create a class student with props: name, age, rollno, course
+//create a constructor to initialize properties
+//create a method display_details to display student info
+//create 3 student objects and display details
+//class
+// class Student{
+//     name:string
+//     age:number
+//     rollno:number
+//     course:string
+//     //constructor
+//     constructor(name:string, age:number, rollno:number, course:string){
+//         this.name=name
+//         this.age=age
+//         this.rollno=rollno
+//         this.course=course
+//     }
+//     //method
+//     displayData(){
+//         console.log("Name:", this.name);
+//         console.log("Age:", this.age);
+//         console.log("Roll No:", this.rollno);
+//         console.log("Course:", this.course);
+//     }
+// }
+// //objects
+// let s1=new Student("Akash",20,1,"Python")
+// let s2=new Student("Bhavana",20,2,"Java")
+// let s3=new Student("Bhavya",20,3,"Java")
+
+// console.log(s1);
+// console.log(s2);
+// console.log(s3);
+
+// s1.displayData()
+// console.log("-----");
+
+// s2.displayData()
+// console.log("-----");
+
+// s3.displayData()
+// console.log("-----");
+
+
+//create a class emp: emp_name: emp_id, basic _sal
+//create a method to create annual sal
+//create a method to display employee details
+// class Employee{
+//     ename:string;
+//     eid:number;
+//     basic_sal:number
+//     annual_sal:number
+//     constructor(ename:string, eid:number, basic_sal:number, annual_sal:number){
+//         this.ename=ename
+//         this.eid=eid
+//         this.basic_sal=basic_sal
+//         this.annual_sal=annual_sal
+        
+//     }
+//     //method
+//     annualSal(){
+//         this.annual_sal=this.basic_sal*12
+//         console.log("Annual salary:",this.annual_sal);
+        
+//     }
+//     displayEmp(){
+//         console.log("Employee name:", this.ename);
+//         console.log("Employee id:", this.eid);
+//         console.log("Employee salary:", this.basic_sal);
+           
+//     }
+// }
+// let e1=new Employee("bhavana",12,1000)
+// e1.displayEmp()
+// e1.annualSal()
+
+//create a class product: product name, price, and quantity
+//calculate a total product avlue
+//apply 10% discount if the price is above 5000
+
+class Product {
+    p_name: string;
+    p_price: number;
+    p_quantity: number;
+    total_price: number;
+
+    constructor(p_name: string, p_price: number, p_quantity: number) {
+        this.p_name = p_name;
+        this.p_price = p_price;
+        this.p_quantity = p_quantity;
+        this.total_price = 0;
+    }
+
+    totalPrice() {
+        this.total_price = this.p_price * this.p_quantity;
+
+        console.log("Product Name:", this.p_name);
+        console.log("Product Price:", this.p_price);
+        console.log("Product Quantity:", this.p_quantity);
+
+        console.log("Total Price:", this.total_price);
+
+        if (this.total_price > 5000) {
+            let discount = this.total_price * 0.10;
+            this.total_price = this.total_price - discount;
+
+            console.log("Discount:", discount);
+            console.log("Price after discount:", this.total_price);
+        }
+    }
 }
 
-let myDog:dog={
-    name:"simba",
-    age:4,
-    breed:"Golden retriver"
-}
-console.log("Dog:",myDog);
+let p1 = new Product("Pen", 10, 3);
 
-interface cat extends animal{
-    breed:string
-}
-let myCat:cat={
-    name:"chintu",
-    age:1,
-    breed:"persian"
-}
-console.log("Cat:",myCat);
+let p2 = new Product("Laptop", 60000, 2);
 
-
-interface hasEngine {
-    engine: string;
-}
-
-interface hasWheels {
-    wheels: string;
-}
-
-interface Car extends hasEngine, hasWheels {
-    brand: string;
-    model: string;
-}
-let mycar: Car = {
-    engine: "YES",
-    wheels: "4",
-    brand: "BMW",
-    model: "X5"
-};
-
-console.log(mycar);
-
+p1.totalPrice();
+console.log("-------------");
+p2.totalPrice();
