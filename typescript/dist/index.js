@@ -931,34 +931,132 @@ Object.defineProperty(exports, "__esModule", { value: true });
 //create a class product: product name, price, and quantity
 //calculate a total product avlue
 //apply 10% discount if the price is above 5000
-class Product {
-    p_name;
-    p_price;
-    p_quantity;
-    total_price;
-    constructor(p_name, p_price, p_quantity) {
-        this.p_name = p_name;
-        this.p_price = p_price;
-        this.p_quantity = p_quantity;
-        this.total_price = 0;
-    }
-    totalPrice() {
-        this.total_price = this.p_price * this.p_quantity;
-        console.log("Product Name:", this.p_name);
-        console.log("Product Price:", this.p_price);
-        console.log("Product Quantity:", this.p_quantity);
-        console.log("Total Price:", this.total_price);
-        if (this.total_price > 5000) {
-            let discount = this.total_price * 0.10;
-            this.total_price = this.total_price - discount;
-            console.log("Discount:", discount);
-            console.log("Price after discount:", this.total_price);
-        }
-    }
-}
-let p1 = new Product("Pen", 10, 3);
-let p2 = new Product("Laptop", 60000, 2);
-p1.totalPrice();
-console.log("-------------");
-p2.totalPrice();
+// class Product {
+//     p_name: string;
+//     p_price: number;
+//     p_quantity: number;
+//     total_price: number;
+//     constructor(p_name: string, p_price: number, p_quantity: number) {
+//         this.p_name = p_name;
+//         this.p_price = p_price;
+//         this.p_quantity = p_quantity;
+//         this.total_price = 0;
+//     }
+//     totalPrice() {
+//         this.total_price = this.p_price * this.p_quantity;
+//         console.log("Product Name:", this.p_name);
+//         console.log("Product Price:", this.p_price);
+//         console.log("Product Quantity:", this.p_quantity);
+//         console.log("Total Price:", this.total_price);
+//         if (this.total_price > 5000) {
+//             let discount = this.total_price * 0.10;
+//             this.total_price = this.total_price - discount;
+//             console.log("Discount:", discount);
+//             console.log("Price after discount:", this.total_price);
+//         }
+//     }
+// }
+// let p1 = new Product("Pen", 10, 3);
+// let p2 = new Product("Laptop", 60000, 2);
+// p1.totalPrice();
+// console.log("-------------");
+// p2.totalPrice();
+//inheritance:
+// class parent{
+//     name:string
+//     constructor(name:string){
+//         this.name=name
+//     }
+//     //method
+//     eat(){
+//         console.log(this.name + " is Eating");
+//     }
+// }
+// class child extends parent{
+//     //method
+//     playing(){
+//         console.log(this.name + " is playing");
+//     }
+// }
+// let p1=new child("akash")
+// p1.eat()
+// p1.playing()
+//create a vehicle class with brand and speed
+//create a car class that inherrits vehicle and add fuel type
+//display all details using child class objects
+// class vehicle{
+//     brand:string
+//     speed:number
+//     constructor(brand:string, speed:number){
+//         this.brand=brand
+//         this.speed=speed
+//     }
+// }
+// class car extends vehicle{
+//     fuel:string
+//     constructor(brand:string, speed:number,fuel:string){
+//         super(brand,speed)
+//         this.fuel=fuel
+//     }
+//     display(){
+//         console.log("Brand name:",this.brand);
+//         console.log("Speed:",this.speed);
+//         console.log("Fuel Type:",this.fuel);        
+//     }   
+// }
+// let c1=new car("BMW",120,"petrol")
+// c1.display()
+//create a employee class:name, sal, password
+//create a managaer child class try accessing all 3properties inside child class
+// class employe{
+//     public name="Rahul"
+//     protected sal=100000
+//     private password="123456"
+// }
+// class managaer extends employe{
+//     display(){
+//         console.log("Name:",this.name);
+//         console.log("Salary:",this.sal);
+//         //console.log(this.password);
+//     }
+// }
+// let data=new managaer()
+// data.display()
+//polymorphism:
+// interface paymentMode{
+//     pay():void{
+//     }
+// }
+// class upipayment implements paymentMode{
+//     pay():void{
+//         console.log("Payment done through UPI");
+//     }
+// }
+// class cashPayment implements paymentMode{
+//     pay():void{
+//         console.log("Payment done through Cash");
+//     }
+// }
+// class cardPayment implements paymentMode{
+//     pay():void{
+//         console.log("Payment done through Card");
+//     }
+// }
+// class net_bankingPayment implements paymentMode{
+//     pay():void{
+//         console.log("Payment done through net banking");
+//     }
+// }
+// let payment:paymentMode
+// payment=new upipayment()
+// payment.pay()
+// console.log("--------------------");
+// payment=new cashPayment()
+// payment.pay()
+// console.log("--------------------");
+// payment=new cardPayment()
+// payment.pay()
+// console.log("--------------------");
+// payment=new net_bankingPayment()
+// payment.pay()
 //# sourceMappingURL=index.js.map
