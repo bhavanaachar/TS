@@ -1059,4 +1059,120 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // console.log("--------------------");
 // payment=new net_bankingPayment()
 // payment.pay()
+//create a payment class:    
+// class paymentMode{
+//     pay():void{
+//     }
+// }
+// class gpay extends paymentMode{
+//     pay():void{
+//         console.log("Payment done through google pay");
+//     }
+// }
+// class phonePay extends paymentMode{
+//     pay():void{
+//         console.log("Payment done through phone pay");
+//     }
+// }
+// class paytm extends paymentMode{
+//     pay():void{
+//         console.log("Payment done through paytm");
+//     }
+// }
+// let payment:paymentMode
+// payment=new gpay()
+// payment.pay()
+//encapsulation:
+// class BankAccount{
+//     private balance:number=5000
+//     deposit(amount:number):void{
+//         if(amount>0){
+//             this.balance+=amount
+//             console.log("amount depsited");
+//         }
+//         else{
+//             console.log("Invalid amount");
+//         }
+//     }
+//     getBalance():number{
+//             return this.balance
+//     }
+// }
+// let account=new BankAccount()
+// account.deposit(40000)
+// console.log(account.getBalance());
+//getter and setter functions
+// class Employee {
+//     private salary: number = 50000;
+//     get getsalary(): number {
+//         return this.salary;
+//     }
+//     set setSalary(amount: number) {
+//         if (amount > 0) {
+//             this.salary = amount;
+//         }
+//         else {
+//             console.log("Invalid salary");
+//         }
+//     }
+// }
+// let emp = new Employee();
+// // Before updating
+// console.log("Old Salary:", emp.getsalary);
+// // Update salary
+// emp.setSalary = 100000;
+// // After updating
+// console.log("New Salary:", emp.getsalary);
+//abstraction
+// using abstract class
+// abstract class Animal{
+//     abstract makeSound():void
+//     sleep():void{
+//         console.log("Animal is sleeping");
+//     }
+// }
+// class dog extends Animal{
+//     makeSound(): void {
+//         console.log("Dog barks");
+//     }
+// }
+// class cat extends Animal{
+//     makeSound(): void {
+//         console.log("Cat meows");
+//     }
+// }
+// let d1=new dog()
+// d1.makeSound()
+// let c1=new cat()
+// c1.makeSound()
+//example
+// Abstract class
+class ATM {
+    // Public functionality
+    withdraw(pin, amount) {
+        if (this.verifyPIN(pin)) {
+            console.log("PIN Verified");
+            this.processTransaction(amount);
+        }
+        else {
+            console.log("Invalid PIN");
+        }
+    }
+    // Internal implementation
+    processTransaction(amount) {
+        console.log(amount + " withdrawal successful");
+    }
+}
+// Child class
+class SBI extends ATM {
+    // Implementing abstract method
+    verifyPIN(pin) {
+        console.log("Verifying PIN");
+        return pin === 1234;
+    }
+}
+// Creating child class object
+let atm = new SBI();
+// Calling withdraw method
+atm.withdraw(1234, 5000);
 //# sourceMappingURL=index.js.map
